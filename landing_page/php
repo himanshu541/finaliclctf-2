@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect to Different Port</title>
+</head>
+<body>
+    <script>
+        const currentURL = window.location.href;
+        const url = new URL(currentURL);
+        url.port = '8080'; // Change this to the desired port
+	window.location.href = url.toString();
+    </script>
+</body>
+</html>

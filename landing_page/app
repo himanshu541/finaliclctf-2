@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning - Authentication Required</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: url('bbbapp.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        #warning-container {
+            background-color: rgba(255, 0, 0, 0.8); /* Red background with transparency for warning effect */
+            padding: 30px;
+            border: 2px solid yellow;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0 0 0;
+        }
+        button {
+            background-color: yellow; /* Button color */
+            color: black; /* Text color */
+            border: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: orange; /* Hover color */
+        }
+    </style>
+</head>
+<body>
+    <div id="warning-container">
+        <h1>Warning: Unauthorized Access</h1>
+        <p>Intruder detected! You dare to challenge the fortified defenses of ISRO? Cease your efforts, or face the wrath of our impenetrable security. Proceed if you dare, but know that the system is designed to crush intruders. Find the hidden credentials if you can, but be warned, failure will not be tolerated.</p>
+        <button id="proceed-button">Proceed to Authentication</button>
+    </div>
+    <script>
+        document.getElementById('proceed-button').addEventListener('click', function() {
+            // Get the current URL and construct the new URL with port 8081
+            const currentURL = window.location.href;
+            const url = new URL(currentURL);
+            url.port = '8081';
+            // Redirect to the new URL with port 8081
+            window.location.href = url.toString();
+        });
+    </script>
+</body>
+</html>

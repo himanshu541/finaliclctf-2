@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Need your first key? = ./key1.txt -->
+    <!--VXNlcm5hbWU9dm95YWdlciB8IFBhc3N3b3JkPUdhbEBjdGljUEBzc3cwcmQhMjAyNA==-->
+    <!--ssh -p 2222-->
+    <title>Authentication </title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: url('success.webp') no-repeat center center fixed;
+            background-size: cover;
+        }
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        #container {
+            position: absolute;
+            top: 20%;
+            left: 5%; /* Moved 10% from the left */
+            width: 80%; /* Fixed width */
+            height: 60%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            pointer-events: none;
+        }
+        #terminal {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark background with slight transparency */
+            color: #00FF00; /* Increased brightness */
+	    font-family: 'Courier New', Courier, monospace;
+	    font-size: 20px;
+            padding: 20px;
+            border: 1px solid #0000FF;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow: hidden; /* Hide scrollbars */
+            width: 100%; /* Full width of container */
+            height: auto; /* Adjust height automatically */
+            text-align: left; /* Left align text */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white;text-align: center;font-size: 90px; " > Authenticated </h1>
+    <div id="container">
+        <div id="terminal"></div>
+    </div>
+
+    <script>
+        const message = `You have successfully completed the first challenge in your journey through the | Bharat Beyond Brahmand CTF. 
+The path is treacherous, and your skills have proven worthy to this point.
+
+Flag 1: BBB{Byp4ss1ng_th3_Shields}
+
+But remember, the most dangerous obstacles lie ahead. 
+As you progress, the systems will become more resilient, and the stakes higher. 
+Keep your wits about you and prepare for the next level of this cosmic challenge.
+
+Warning: Each step closer to the core will be fraught with greater risks. 
+The system is evolving its defenses, and you must be vigilant. 
+The secrets of ISRO's operations are not easily unveiled. 
+Brace yourself for what lies beyond, and may your determination guide you to the final resolution.
+Proceed to the next phase of your mission.`;
+
+        const terminal = document.getElementById('terminal');
+        let index = 0;
+
+        function type() {
+            if (index < message.length) {
+                terminal.innerHTML += message[index];
+                index++;
+                setTimeout(type, 50); // Adjust typing speed by changing the value
+            }
+        }
+
+        type();
+    </script>
+</body>
+</html>

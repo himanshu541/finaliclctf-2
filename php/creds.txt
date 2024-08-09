@@ -1,0 +1,4 @@
+Username: astroagent
+Password: N3bulaS3cur3!2024@
+port: 2223
+flag4: BBB{Inject1ng_C0mm4nds}
