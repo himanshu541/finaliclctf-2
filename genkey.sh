@@ -32,4 +32,4 @@ echo "KEY11: $key11" > ./ssh_server/vm3/forensic/key11.txt
 echo "KEY12: $key12" > ./ssh_server/vm3/forensic/key12.txt
 
 # Print the key to the console
-#docker-compose up --build -d
+docker-compose up --build -d
