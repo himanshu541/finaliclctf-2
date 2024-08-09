@@ -12,6 +12,9 @@ RUN useradd -rm -d /home/galacticexplorer  -s /bin/bash -u 1001 galacticexplorer
 # Set passwords for the new users
 # Password for admin user 
 RUN echo 'galacticexplorer:C0sm1cVoy@ger!2024' | chpasswd
+
+RUN chmod 774 /home/galacticexplorer/
+
 RUN mkdir /home/galacticexplorer/.folder
 
 COPY ./forensic/flag8.zip /home/galacticexplorer/.folder/flag8.zip
@@ -20,18 +23,18 @@ COPY ./forensic/flag9.zip /home/galacticexplorer/.folder/flag9.zip
 COPY ./forensic/key9.txt /home/galacticexplorer/.folder/key9.txt
 COPY ./forensic/flag10.zip /home/galacticexplorer/.folder/flag10.zip
 COPY ./forensic/key10.txt /home/galacticexplorer/.folder/key10.txt
-COPY ./forensic/flag11.zip /home/galacticexplorer/.folder/flag11.zip
-COPY ./forensic/key11.txt /home/galacticexplorer/.folder/key11.txt
+COPY ./forensic/flag11.zip /home/galacticexplorer/.folder/.flag11.zip
+COPY ./forensic/key11.txt /home/galacticexplorer/.folder/.key11.txt
 COPY ./forensic/flag12.zip /home/galacticexplorer/.folder/flag12.zip
 COPY ./forensic/key12.txt /home/galacticexplorer/.folder/key12.txt
 # Expose the SSH port
-COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag1/flags.zip
-COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag2/flags.zip
-COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag3/flags.zip
-COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag4/flags.zip
-COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag5/flags.zip
-COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag6/flags.zip
-COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag7/flags.zip
+COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag1.zip
+COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag2.zip
+COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag3.zip
+COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag4.zip
+COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag5.zip
+COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag6.zip
+COPY ./forensic/flags.zip /home/galacticexplorer/.folder/flag7.zip
 
 
 
